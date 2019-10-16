@@ -87,7 +87,7 @@ Disclaimer {#disclaimer}
 
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Source code: [github.com/nuhorchak/resume](https://github.com/nuhorchak/resume).
 
 Last updated on `r Sys.Date()`.
 

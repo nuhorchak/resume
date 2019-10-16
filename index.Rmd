@@ -53,9 +53,10 @@ Aside
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
-  cat("View this CV online with links at _nickstrayer.me/cv_")
+  cat("View this CV online with links at 
+      https://github.com/nuhorchak/resume/pdfs/uhorchak_cv.pdf")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nuhorchak/resume/pdfs/uhorchak_cv.pdf)")
 }
 ```
 
@@ -69,12 +70,8 @@ Contact {#contact}
 - <i class="fa fa-linkedin"></i> linkedin.com/in/nicholas-uhorchak/
 - <i class="fa fa-phone"></i> (254) 317-9339
 
-
-
 Skills {#skills}
 --------------------------------------------------------------------------------
-
-
 Highly experienced in
 
 - R 
@@ -83,22 +80,16 @@ Highly experienced in
 
 Experience with
 
-
 - Python
 - Power BI
 - Data Robot
 - Alteryx
 
+<br>
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
-
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available at [github.com/nuhorchak/resume](https://github.com/nuhorchak/resume).
-
 Last updated on `r Sys.Date()`.
-
 
 
 Main
@@ -155,13 +146,10 @@ I have worked at levels ranging from patoon to division and combatant command he
 <br>
 
 
+
 <!-- Selected Data Science Writing {data-icon=chart-line} -->
 <!-- -------------------------------------------------------------------------------- -->
 
-
-<!-- ::: aside -->
-<!-- I regularly blog about data science and visualization on my blog [LiveFreeOrDichotomize.](https://livefreeordichotomize.com/) -->
-<!-- ::: -->
 
 <!-- ```{r} -->
 <!-- print_section(position_data, 'data_science_writings') -->
@@ -197,7 +185,7 @@ I have worked at levels ranging from patoon to division and combatant command he
 
 
 
-```{r}
+```{r eval=FALSE}
 if(PDF_EXPORT){
   cat("
   
