@@ -1,0 +1,137 @@
+---
+title: Nick Uhorchak's Resume"
+author: Nick Uhorchak
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css: ['css/custom_resume.css', 'css/styles.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+library(tidyverse)
+library(glue)
+
+# Set this to true to have links turned into footnotes at the end of the document
+PDF_EXPORT <- FALSE
+
+# Holds all the links that were inserted for placement at the end
+links <- c()
+
+source('parsing_functions.R')
+
+
+# First let's get the data, filtering to only the items tagged as
+# Resume items
+position_data <- read_csv('positions.csv') %>% 
+  filter(in_resume) %>% 
+  mutate(
+    # Build some custom sections by collapsing others
+    section = case_when(
+      section %in% c('orsa_positions', 'army_positions') ~ 'positions',
+      TRUE ~ section
+    )
+  ) 
+
+```
+
+
+Aside
+================================================================================
+
+
+![logo](Transparent_Logo.png){width=80%}
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+
+- <i class="fa fa-envelope"></i> nuhorchak@gmail.com
+- <i class="fa fa-twitter"></i> nuhorchak
+- <i class="fa fa-github"></i> github.com/nuhorchak
+- <i class="fa fa-linkedin"></i> linkedin.com/in/nicholas-uhorchak/
+- <i class="fa fa-phone"></i> (254) 317-9339
+
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+
+Highly experienced in
+
+
+- R 
+- SQL
+- Excel
+
+Experience with
+
+
+- Python
+- Power BI
+- Data Robot
+- Alteryx
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
+
+Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+
+Last updated on `r Sys.Date()`.
+
+
+
+
+Main
+================================================================================
+
+Nick Uhorchak {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+intro_text <- "I have worked on a variety of data science and operations research projects, ranging from simple statistical analysis to predictive modeling.
+
+Currently searching for a data science position that allows me to support decision makers utilizing both operations research and data science background. 
+"
+cat(sanitize_links(intro_text))
+```
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('education')
+```
+
+
+
+Selected Positions {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('positions')
+```
+
+<!-- Selected Writing {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+
+<!-- ```{r} -->
+<!-- position_data %>% print_section('writings') -->
+<!-- ``` -->
+
+
