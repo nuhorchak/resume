@@ -48,15 +48,15 @@ Aside
 ================================================================================
 
 
-![logo](Transparent_Logo.png){width=80%}
+![logo](bio_pic.jpg){width=80%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
   cat("View this CV online with links at 
-      https://github.com/nuhorchak/resume/pdfs/uhorchak_cv.pdf")
+      https://nuhorchak.github.io./")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nuhorchak/resume/tree/master/pdfs/uhorchak_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV]https://nuhorchak.github.io./)")
 }
 ```
 
