@@ -83,7 +83,8 @@ Experience with
 - Python
 - Power BI
 - Data Robot
-- Alteryx
+- Neo4j/Cypher
+
 
 <br>
 
