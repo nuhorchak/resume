@@ -76,6 +76,7 @@ Highly experienced in
 
 - R 
 - SQL
+- git/subversion
 - Excel
 
 Experience with
@@ -84,6 +85,7 @@ Experience with
 - Power BI
 - Data Robot
 - Neo4j/Cypher
+- MongoDB
 
 
 <br>
