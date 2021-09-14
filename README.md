@@ -1,11 +1,11 @@
-## My pagedown rendered CV
+## My pagedown rendered CV - modified from Nick Strayer's origial blog post
 
 __Switch to googlesheets__
 
 
 ## Structure
 
-This repo contains the source-code and results of my CV built with the [pagedown package](https://pagedown.rbind.io) and a modified version of the 'resume' template. 
+This repo contains the source-code and results of Nick Strayer's CV built with the [pagedown package](https://pagedown.rbind.io) and a modified version of the 'resume' template. 
 
 The main files are:
 
@@ -19,7 +19,7 @@ The main files are:
 
 ## Want to use this to build your own CV/resume? 
 
-I built a package that makes setting up a CV this way rather easy: [`datadrivencv`](http://nickstrayer.me/datadrivencv/).
+Nick Strayer built a package that makes setting up a CV this way rather easy: [`datadrivencv`](http://nickstrayer.me/datadrivencv/).
 
 The easiest way to get going is running these lines in the directory you want to have your CV in: 
 
@@ -34,6 +34,6 @@ This should populate your directory with the appropriate files to get started bu
 
 ## Looking for the old version with just a single CSV?
 
-The [blog post I originally wrote about this process](https://livefreeordichotomize.com/2019/09/04/building_a_data_driven_cv_with_r/) used an older version of this document. I think that the new googlesheets method is easier to maintain and extend, however the old version is alive and well [here.](https://github.com/nstrayer/cv/releases/tag/1.0)
+The [blog post Nick Strayer originally wrote about this process](https://livefreeordichotomize.com/2019/09/04/building_a_data_driven_cv_with_r/) used an older version of this document. I think that the new googlesheets method is easier to maintain and extend, however the old version is alive and well [here.](https://github.com/nstrayer/cv/releases/tag/1.0)
 
 
