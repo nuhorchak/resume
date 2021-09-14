@@ -2,5 +2,10 @@
 *Rproj
 .Rhistory
 resume_files/
-*.docx
-*.csv
+.secrets
+.DS_Store
+README.html
+*_cache/
+cv.html
+
+ddcv_cache.rds

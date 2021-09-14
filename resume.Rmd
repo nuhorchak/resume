@@ -1,13 +1,12 @@
 ---
-title: Nick Uhorchak's Resume"
-author: Nick Uhorchak
+title: Nick Strayer's Resume"
+author: Nick Strayer
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
     css: ['css/custom_resume.css', 'css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: true
-
 ---
 
 
@@ -19,67 +18,98 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(glue)
 
-# Set this to true to have links turned into footnotes at the end of the document
+# ======================================================================
+# These variables determine how the the data is loaded and how the exports are
+# done.
+
+# Is data stored in google sheets? If no data will be gather from the csvs/
+# folder in project
+using_googlesheets <- TRUE
+
+# Just the copied URL from the sheet
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc"
+
+# Is this sheet available for anyone to read? If you're using a private sheet
+# set this to false and go to gather_data.R and run the data loading manually
+# once to cache authentication
+sheet_is_publicly_readable <- TRUE
+
+# Is the goal of this knit to build a document that is exported to PDF? If so
+# set this to true to have links turned into footnotes at the end of the
+# document
 PDF_EXPORT <- FALSE
 
-# Holds all the links that were inserted for placement at the end
+
+# A global (gasp) variable that holds all the links that were inserted for
+# placement at the end
 links <- c()
 
-source('parsing_functions.R')
+# ======================================================================
+# Now we source two external scripts. One contains functions for building the
+# text output and the other loads up our data from either googlesheets or csvs
 
+# Functions for building sections from CSV data
+source('parsing_functions.R') 
 
-# First let's get the data, filtering to only the items tagged as
-# Resume items
-position_data <- read_csv('positions.csv') %>% 
+# Load data for CV/Resume
+source('gather_data.R')
+
+# Now we just need to filter down the position data to include less verbose
+# categories and only the entries we have designated for the resume
+position_data <- position_data %>% 
   filter(in_resume) %>% 
   mutate(
     # Build some custom sections by collapsing others
     section = case_when(
-      section %in% c('orsa_positions', 'army_positions') ~ 'positions',
+      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
+      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
       TRUE ~ section
     )
   ) 
-
 ```
+
 
 
 Aside
 ================================================================================
 
 
-![logo](bio_pic.jpg){width=80%}
+![logo](logo.png){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
-
-
-- <i class="fa fa-envelope"></i> nuhorchak@gmail.com
-- <i class="fa fa-twitter"></i> nuhorchak
-- <i class="fa fa-github"></i> github.com/nuhorchak
-- <i class="fa fa-linkedin"></i> linkedin.com/in/nicholas-uhorchak/
-- <i class="fa fa-phone"></i> (254) 317-9339
+```{r}
+contact_info %>% 
+  glue_data("- <i class='fa fa-{icon}'></i> {contact}")
+```
 
 
 
-Skills {#skills}
+Language Skills {#skills}
 --------------------------------------------------------------------------------
 
-
-Highly experienced in
-
-
-- R 
-- SQL
-- Excel
-
-Experience with
+```{r}
+build_skill_bars(skills)
+```
 
 
-- Python
-- Power BI
-- Data Robot
-- Alteryx
+
+Open Source Contributions {#open-source}
+--------------------------------------------------------------------------------
+
+All projects available at `github.com/nstrayer/<name>`
+
+
+- `shinysense`: R package to use sensor data in Shiny apps
+- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
+- `sbmR`: R package for fitting stochasitic block models
+
+
+More info {#more-info}
+--------------------------------------------------------------------------------
+
+See full CV at nickstrayer.me/cv for more complete list of positions and publications.
 
 
 Disclaimer {#disclaimer}
@@ -87,25 +117,20 @@ Disclaimer {#disclaimer}
 
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code: [github.com/nuhorchak/resume](https://github.com/nuhorchak/resume).
+Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
 
 Last updated on `r Sys.Date()`.
-
 
 
 
 Main
 ================================================================================
 
-Nick Uhorchak {#title}
+Nick Strayer {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have worked on a variety of data science and operations research projects, ranging from simple statistical analysis to predictive modeling.
-
-Currently searching for a data science position that allows me to support decision makers utilizing both operations research and data science background. 
-"
-cat(sanitize_links(intro_text))
+print_text_block(text_blocks, 'intro')
 ```
 
 
@@ -126,12 +151,13 @@ Selected Positions {data-icon=suitcase}
 position_data %>% print_section('positions')
 ```
 
-<!-- Selected Writing {data-icon=newspaper} -->
-<!-- -------------------------------------------------------------------------------- -->
 
 
-<!-- ```{r} -->
-<!-- position_data %>% print_section('writings') -->
-<!-- ``` -->
+Selected Writing {data-icon=newspaper}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('writings')
+```
 
 
