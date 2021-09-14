@@ -83,7 +83,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+The source code is available [on github.com/nuhorchak/resume](https://github.com/nuhorchak/resume).
 
 Last updated on `r Sys.Date()`.
 
@@ -116,6 +116,10 @@ Industry Experience {data-icon=laptop}
 CV %<>% print_section('industry_positions')
 ```
 
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
+<br>
 
 Operational Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
@@ -127,10 +131,10 @@ CV %<>% print_section('operational_positions')
 
 
 
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
+<!-- <!-- These breaks just force a new page so section doesnt get cut off --> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 
 <!-- Teaching Experience {data-icon=chalkboard-teacher} -->
 <!-- -------------------------------------------------------------------------------- -->
