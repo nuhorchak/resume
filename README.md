@@ -11,7 +11,7 @@ The main files are:
 
 - `cv.Rmd`: Source template for the cv, contains a YAML variable `pdf_mode` in the header that changes styles for pdf vs html. 
 - `render_cv.R`: R script for rendering both pdf and html version of CV at the same time.
-  - `index.html`: The final output of the template when the header variable `PDF_EXPORT` is set to `FALSE`. View it at [nickstrayer.me/cv](https://nuhorchak.github.io/).
+  - `index.html`: The final output of the template when the header variable `PDF_EXPORT` is set to `FALSE`. View it at [nuhorchak.github.io](https://nuhorchak.github.io/).
   - `uhorchak_cv.pdf`: The final exported pdf as rendered by Chrome on my mac laptop. Links are put in footer and notes about online version are added. 
 - `styles/*, dd_cv.css`: Custom CSS files used to tweak the default 'resume' format from pagedown. 
 - `resume.Rmd`: Source template for single page resume. (Currently neglected compared to CV.)
