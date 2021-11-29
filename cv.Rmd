@@ -1,6 +1,6 @@
 ---
 title: "Nick Uhorchak's CV"
-author: Nick Uhorchak
+author: Nick Uhorchak, userID nuhorchak@gmail.com
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
