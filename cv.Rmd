@@ -1,6 +1,6 @@
 ---
 title: "Nick Uhorchak's CV"
-author: Nick Uhorchak, userID nuhorchak@gmail.com
+author: Nick Uhorchak
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -131,13 +131,13 @@ CV %<>% print_section('operational_positions')
 
 
 
-<!-- <!-- These breaks just force a new page so section doesnt get cut off --> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
+<br>
 
-<!-- Teaching Experience {data-icon=chalkboard-teacher} -->
-<!-- -------------------------------------------------------------------------------- -->
+Honors Received {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
 
 <!-- ::: aside -->
 <!-- ```{r} -->
@@ -145,9 +145,9 @@ CV %<>% print_section('operational_positions')
 <!-- ``` -->
 <!-- ::: -->
 
-<!-- ```{r} -->
-<!-- CV %<>% print_section('teaching_positions') -->
-<!-- ``` -->
+```{r}
+CV %<>% print_section('honors_received')
+```
 
 
 
@@ -187,12 +187,12 @@ CV %<>% print_section('data_science_writings')
 
 
 
-<!-- Selected Publications, Posters, and Talks {data-icon=book} -->
-<!-- -------------------------------------------------------------------------------- -->
+Selected Reserach {data-icon=book}
+--------------------------------------------------------------------------------
 
-<!-- ```{r} -->
-<!-- CV %<>% print_section('academic_articles') -->
-<!-- ``` -->
+```{r}
+CV %<>% print_section('research')
+```
 
 
 
