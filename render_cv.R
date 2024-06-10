@@ -11,15 +11,15 @@
 library(tidyverse)
 source("CV_printing_functions.R")
 cv_data <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1u2R7TX1pmc9ouarsp2bgcH5LRCzeAQpNOYEluvwjru0/edit?usp=sharing",
+  data_location = "https://docs.google.com/spreadsheets/d/1u2R7TX1pmc9ouarsp2bgcH5LRCzeAQpNOYEluvwjru0/edit?usp=drive_link",
   cache_data = FALSE
 )
 
 readr::write_rds(cv_data, 'cached_positions.rds')
-cache_data <- TRUE
+cache_data <- FALSE
 
 # Knit the HTML version
-rmarkdown::render("cv.rmd",
+rmarkdown::render("cv.Rmd",
                   params = list(pdf_mode = FALSE, cache_data = cache_data),
                   output_file = "index.html")
 
@@ -33,3 +33,6 @@ rmarkdown::render("cv.rmd",
 # Convert to PDF using Pagedown
 pagedown::chrome_print(input = tmp_html_cv_loc,
                        output = "uhorchak_cv.pdf")
+
+
+
